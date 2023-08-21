@@ -58,10 +58,12 @@ let detalhes = (id) =>{
 let wrapper = document.querySelector(".wrapper");
 let header = document.querySelector("header");
 let detalhesSection = document.querySelector(".detalhes");
+let bgBorrar = document.createElement("div");
+bgBorrar.setAttribute("class", "bg-borrar");
 
 let criarDetalhes = (titulo, imagem, descricao, data, autora, autoraimg) => {
     
-    wrapper.style.animation = "fadeOut 0.5s ease-in-out";
+    wrapper.style.animation = "fadeOut 0.8s ease-in-out";
     
     setTimeout(function(){
         
@@ -72,6 +74,8 @@ let criarDetalhes = (titulo, imagem, descricao, data, autora, autoraimg) => {
         header.style.backgroundSize = "cover";
         header.style.height = "35.3125rem";
 
+       
+
         let tituloDetalhe = document.createElement("h1");
         tituloDetalhe.setAttribute("class", "titulo-detalhe");
         tituloDetalhe.appendChild(document.createTextNode(titulo));
@@ -80,16 +84,44 @@ let criarDetalhes = (titulo, imagem, descricao, data, autora, autoraimg) => {
         descricaoDetalhe.setAttribute("class", "descricao-detalhe");
         descricaoDetalhe.appendChild(document.createTextNode(descricao));
 
+        let autorDiv = document.createElement("div");
+        autorDiv.setAttribute("class", "autor-div");
 
-        header.appendChild(tituloDetalhe);
+        let autorImg = document.createElement("div");
+        autorImg.setAttribute("class","autor-img");
+
+        let autorText = document.createElement("div");
+        autorText.setAttribute("class" , "autor-text");
+
+        let autorNome = document.createElement("p");
+        autorNome.setAttribute("class","texto-branco");
+        autorNome.appendChild(document.createTextNode("Criado por: "+autora));
+
+        let dataPostagem = document.createElement("p");
+        dataPostagem.setAttribute("class","texto-branco");
+        dataPostagem.appendChild(document.createTextNode("Postado dia: "+data));
+
+        autorDiv.appendChild(autorImg);
+        autorDiv.appendChild(autorText);
+        autorText.appendChild(autorNome);
+        autorText.appendChild(dataPostagem);
+
+        header.appendChild(bgBorrar);
+        bgBorrar.appendChild(tituloDetalhe);
+        bgBorrar.style.animation = "fadeIn 0.55s ease-in-out";
         detalhesSection.appendChild(descricaoDetalhe);
+        detalhesSection.appendChild(autorDiv);
 
     }, 600);
 }
 
 let homeBtn = () => {
-    header.innerHTML="";
-    detalhesSection.innerHTML="";
-    wrapper.style ="";
-    header.style="";
+    bgBorrar.style.animation = "fadeOut 0.55s ease-in-out";
+    setTimeout(function(){
+        header.innerHTML="";
+        detalhesSection.innerHTML="";
+        wrapper.style ="";
+        header.style="";
+        bgBorrar.innerHTML ="";
+    }, 500);
 }

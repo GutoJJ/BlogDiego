@@ -6,7 +6,7 @@
 
 body{
     width: 100%;
-    min-height: 110vh;
+    min-height: 100vh;
     background: #080808;
     background-position: center;
     background-size: cover;
@@ -162,8 +162,14 @@ footer h1{
 }
 
 .titulo-detalhe{
-    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
     font-size: 4rem;
+    
+}
+
+.bg-borrar{ 
+    width: 100%;
     background: rgba(24, 24, 24, 0.50);
     backdrop-filter: blur(7.5px);
 }
@@ -176,6 +182,35 @@ footer h1{
     font-weight: 400;
 }
 
+.autor-div{
+    margin-top: 5rem;
+    max-width: 25rem;
+    display: flex;
+    background: #000;
+    filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.07)) drop-shadow(0px 6px 13px rgba(255, 255, 255, 0.07)) drop-shadow(0px 24px 24px rgba(255, 255, 255, 0.06)) drop-shadow(0px 53px 32px rgba(255, 255, 255, 0.03)) drop-shadow(0px 95px 38px rgba(255, 255, 255, 0.01)) drop-shadow(0px 148px 41px rgba(255, 255, 255, 0.00));
+}
+
+.autor-img{
+    width: 8rem;
+    height: 8rem;
+    background: url("../IMGS/diego.jpg");
+    background-position: 50% 20%;
+    background-size: 180%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.autor-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-branco{
+    margin-left: 0;
+}
 
 
 

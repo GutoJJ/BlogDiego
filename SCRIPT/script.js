@@ -2,7 +2,6 @@ let posts = document.querySelector(".posts");
 const link = "https://api-rest-post-diegocandido.herokuapp.com";
 
 window.onload = () => {
-    document.body.style.background ="linear-gradient(180deg, #272942 0%, #101117 100%), #090909";
     fetch(link+"/postagens")
         .then(resp => resp.json())
         .then(resp => {
@@ -62,9 +61,8 @@ let detalhesSection = document.querySelector(".detalhes");
 
 let criarDetalhes = (titulo, imagem, descricao, data, autora, autoraimg) => {
     
-    wrapper.style.animation = "fadeOut 1s ease-in-out";
-    document.body.style.transition = "3s";
-    document.body.style.background = "#090909";
+    wrapper.style.animation = "fadeOut 0.5s ease-in-out";
+    
     setTimeout(function(){
         
         wrapper.style.display = "none";
@@ -78,14 +76,20 @@ let criarDetalhes = (titulo, imagem, descricao, data, autora, autoraimg) => {
         tituloDetalhe.setAttribute("class", "titulo-detalhe");
         tituloDetalhe.appendChild(document.createTextNode(titulo));
 
-        detalhesSection.appendChild(tituloDetalhe);
+        let descricaoDetalhe = document.createElement("p");
+        descricaoDetalhe.setAttribute("class", "descricao-detalhe");
+        descricaoDetalhe.appendChild(document.createTextNode(descricao));
+
+
+        header.appendChild(tituloDetalhe);
+        detalhesSection.appendChild(descricaoDetalhe);
 
     }, 600);
 }
 
 let homeBtn = () => {
+    header.innerHTML="";
     detalhesSection.innerHTML="";
-    document.body.style.background ="linear-gradient(180deg, #272942 0%, #101117 100%), #090909";
     wrapper.style ="";
     header.style="";
 }

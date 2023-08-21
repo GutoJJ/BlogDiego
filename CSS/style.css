@@ -7,7 +7,7 @@
 body{
     width: 100%;
     min-height: 110vh;
-    background: linear-gradient(180deg, #272942 0%, #101117 100%);
+    background: #080808;
     background-position: center;
     background-size: cover;
 }
@@ -60,6 +60,8 @@ header{
     background-position: center;
     background-size: cover;
     transition: 1.5s ease-in-out;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 main{
@@ -152,6 +154,11 @@ footer{
     width: 100%;
     background: #000;
     bottom: 0;
+    display: flex;
+}
+
+footer h1{
+    opacity: 0.5;
 }
 
 .titulo-detalhe{
@@ -159,9 +166,15 @@ footer{
     font-size: 4rem;
     background: rgba(24, 24, 24, 0.50);
     backdrop-filter: blur(7.5px);
-    margin-top: -12rem;
 }
 
+.descricao-detalhe{
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+}
 
 
 
@@ -211,6 +224,13 @@ footer{
         
         grid-template-columns: 1fr 1fr;
     } 
+
+    .titulo-detalhe{
+        font-size: 2rem;
+    }
+    .descricao-detalhe{
+        font-size: 1.2rem;
+    }
 }
 
 @media(max-width: 630px){
@@ -218,13 +238,19 @@ footer{
         margin-top: -2rem;
         font-size: 3rem;
     }
-    
+    .steelblog{
+        font-size: 2rem;
+    }
 }
 
-@media(max-width: 630px){
+@media(max-width: 570px){
     .posts{
-        
         grid-template-columns: 1fr;
+    }
+
+    .card-body{
+        scale: 120%;
+        margin: 2rem auto;
     }
 }
 
